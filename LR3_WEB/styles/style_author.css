@@ -1,0 +1,129 @@
+html {
+    font-family: Roboto, sans-serif;
+   color: #2f80ed;
+    --bg-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.round {
+    border-radius: 200px; 
+    border: 10px darkblue; 
+    box-shadow: 0 0 7px #666; 
+  }
+  
+
+* {
+    color: #333333;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.25em;
+}
+
+h2 {
+    color: #333333;
+    font-size: 1em;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h3 {
+    color: var(--primary-color);
+}
+
+
+A {
+    color:blue; /* Цвет ссылок */
+        outline: none;
+        text-decoration: none;
+   }
+   A:visited {
+    color: violet; 
+   }
+   A:active {
+    color: #ffff00; 
+   }
+
+   A:hover {
+    color: #800000;  
+    text-decoration: underline;
+   }
+
+
+hr{
+    height:5px;
+    border:none;
+    color:darkslateblue;
+    background-color:darkslateblue;
+}
+
+section {
+    margin-bottom: 3em;
+    position: relative;
+}
+
+.cv {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.contacts {
+    margin-bottom: 2em;
+}
+
+.contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.contact__type {
+    margin-bottom: 0.5em;
+    min-width: 90px;
+}
+
+.experience {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.experience_details {
+    margin-bottom: 0.5em;
+}
+
+.education__date {
+    min-width: 185px;
+    margin-bottom: 1em;
+}
+
+.education__name {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+
+
+.education {
+    margin-bottom: 1em;
+   
+}
+
+.animated-button {
+    border-color: #3498db;
+    color: #0c0a0a;
+    box-shadow: 0 0 40px 40px #90e3e3 inset, 0 0 0 0 #90e3e3;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    }
+    .animated-button:hover {
+      box-shadow: 0 0 10px 0 #90e3e3 inset, 0 0 10px 4px #90e3e3;
+    }
+

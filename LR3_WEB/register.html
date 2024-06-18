@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Регистрация</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="styles/style.css">
+    <script type="text/javascript">
+        function valid (form){
+            const namePattern = /^[А-ЯA-Z][а-яa-z]*([ -][А-ЯA-Z][а-яa-z]*)*$/;
+            const loginPattern = /^(?=.*[a-zA-Z])(?=.*\d).+$/;
+            const emailPattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+            var name = form.name.value;
+            var surname = form.surname.value;
+            var middle_name = form.middle_name.value;
+            var gender = form.gender.value;
+            var login = form.login.value;
+            var email = form.email.value;
+            var password = form.password.value;
+            var RePassword = form.RePassword.value;
+            if(namePattern.test(name)){
+                console.log("Имя: " + name);
+            } else{
+                console.log("Имя введено неправильно");
+                alert ("Имя должно начинаться с заглавной и содержать только буквы");
+                return false;
+            }
+            if(namePattern.test(surname)){
+                console.log("Фамилия: " + surname);
+            } else{
+                console.log("Фамилия введена неправильно");
+                alert ("Фамилия должна начинаться с заглавной и содержать только буквы");
+                return false;
+            }
+            if(namePattern.test(middle_name)){
+                console.log("Отчество: " + middle_name);
+            } else{
+                console.log("Отчество введено некорректно");
+                alert ("Отчество должно начинаться с заглавной и содержать только буквы");
+                return false;
+            }
+            if(gender==""){
+                console.log("Не выбран пол");
+                alert ("Не выбран пол");
+            }  else console.log("Пол: " + gender);
+            if (loginPattern.test(login) && login.length >= 7 ){
+                console.log("Логин: " + login);
+            }   else {
+                console.log("Некорректный логин");
+                alert ("Логин должен содержать буквы и цифры, а также быть не короче 7 символов");
+                return false;
+            }
+            if (emailPattern.test(email)){
+                console.log("Email: " + email);
+            } else {
+                console.log("Email введён неправильно");
+                alert ("Введите еmail корректно");
+                return false;
+            }
+            if(password == RePassword){
+                if(loginPattern.test(password) && password.length >= 8){
+                    console.log("Password: " + password);
+                } else{
+                    console.log("Неправильный пароль");
+                    alert("Длина пароля должна быть не менее 8 символов, пароль должен включать буквы и цифры");
+                    return false;
+                }
+
+            } else{
+                console.log("Пароли не совпадают");
+                alert("Пароли не совпадают");
+                return false;
+            }
+            window.location="authorization.html"
+        }
+        function newWindow(){
+            window.open('author.html', '_blank', 'width=800,height=600');
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div style="text-align: center; padding-bottom: 40px;">
+            <h1>Регистрация</h1>
+            <hr>
+        </div>
+
+    </header>
+    
+    <div style="text-align: center;">
+        <form action="#" method="post" name="test" style="margin: auto; " id="form">
+            <input type="text" name="surname" placeholder="Фамилия" id="surname" required><br>
+            <input type="text" name="name" placeholder="Имя" id="name" required><br>
+            <input type="text" name="middle_name" placeholder="Отчество" id="middle_name" required><br>        
+            <select id="gender" name="gender" required>
+                <option value="" selected>Пол</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+              </select><br>
+            <input type="text" name="login" placeholder="Логин" id="login" required><br>
+            <input type="password" name="password" placeholder="Пароль" id="password" required><br>
+            <input type="password" name="RePassword" placeholder="Подтвердите пароль" id="RePassword" required><br>
+            <input type="email" name="email" placeholder="Email" id="email" required><br>
+            <input class="animated-button" type="button" onclick="valid(document.getElementById('form'))" name="submit" value="Зарегистрироваться"><br>
+            <input class="animated-button" type="button" onclick="newWindow()" value="Автор">
+        </form>
+    </div>   
+</body>
+
+</html>
